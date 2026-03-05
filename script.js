@@ -1,6 +1,9 @@
 const myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
+    if (!new.target) {
+        throw Error("You must use the 'new' operator to call the constructor");
+    }
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -8,7 +11,7 @@ function Book(title, author, pages, readStatus) {
     this.id = crypto.randomUUID();
 }
 
-Book.prototype.toggleReadStatus = function () { 
+Book.prototype.toggleReadStatus = function () {
     this.readStatus = !this.readStatus;
 };
 
@@ -67,7 +70,7 @@ function displayBooks() {
         deleteButton.textContent = "Delete";
         deleteButton.classList.add("delete-btn");
         deleteButton.addEventListener('click', (e) => {
-            const bookId = e.target.parentElement.dataset.id;  
+            const bookId = e.target.parentElement.dataset.id;
             const bookIndex = myLibrary.findIndex(
                 (book) => book.id === bookId
             );
@@ -75,7 +78,7 @@ function displayBooks() {
             displayBooks();
         });
 
-        const toggleButton = document.createElement("button"); 
+        const toggleButton = document.createElement("button");
         toggleButton.textContent = "Toggle Read";
         toggleButton.addEventListener("click", (e) => {
             const bookId = e.target.parentElement.dataset.id;
@@ -86,7 +89,7 @@ function displayBooks() {
             displayBooks();
         });
 
-        card.append(title, author, page, read, toggleButton, deleteButton); 
+        card.append(title, author, page, read, toggleButton, deleteButton);
 
         bookShelf.appendChild(card);
     });
