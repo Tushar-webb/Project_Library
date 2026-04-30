@@ -36,6 +36,8 @@ project-folder
 ├── index.html
 ├── style.css
 ├── script.js
+├── without_CryptoRandomUUID_DeletedUsingIndex_ToggledUsingTheCurrentLoopObject.js
+├── usingClasses.js
 └── README.md
 
 ## Learning Purpose
@@ -48,13 +50,13 @@ This project was built as part of **The Odin Project** to practice:
 - Event handling
 _________________________________________________________________________________
 
-# Self Note — Why is there a second script file?
-## What's the second file?
-An alternate version of the main JavaScript that uses index (from forEach) as a **closure** instead of a unique book.id to identify books for deletion and toggling.
+# Self Note — Why is there a long named script file?
+## What is that file about?
+An alternate version of the main JavaScript(`script.js`) that uses index (from forEach) as a **closure** instead of a unique book.id to identify books for deletion and toggling.
 
 ---
 
-## Is the second file broken or bad?
+## Is this long named script file broken or bad?
 No. For this project, both approaches work perfectly fine.
 
 ---
@@ -66,8 +68,8 @@ That's it. No bug, no theoretical risk. Just the better habit to build early.
 
 ---
 
-## What's a closure? (since that's why this file exists)
-The second file uses a **closure** to "remember" the index.
+## What's a closure? (since that's why this long named script file exists)
+This long named script file uses a **closure** to "remember" the index.
 When you write:
 -----------------------
 myLibrary.forEach((book, index) => {
@@ -81,4 +83,18 @@ The click handler *closes over* `index` — meaning it locks in the value of `in
 ---
 
 ## Summary
-The second file is kept just to remember that the closure/index approach exists and works — but UUID is the better habit for when you move beyond simple frontend projects.
+The long named script file is kept just to remember that the closure/index approach exists and works — but UUID(from `script.js`) is the better habit for when you move beyond simple frontend projects.
+
+_________________________________________________________________________________
+
+# Self Note — Why is there a file named `usingClasses.js`?
+## Where does this come from?
+This file is **not** part of the current chapter’s assignment.
+
+The current chapter (Objects and Constructors) assigned this **Library project**, and later a chapter named **Classes**—which comes two chapters after this one—tasked me with refactoring it to use ES6 Classes via a **Git branch workflow**. However, I did not follow that approach. Instead, I created a separate file named `usingClasses.js` because I felt that using a Git branch workflow would either replace or add unnecessary complexity to my original code, making it harder to follow.
+
+I wanted to avoid that because the old code (the current project's `script.js`) is still very important to me. It serves as a clear record of how my understanding began and acts as a helpful guide for revisiting the fundamentals. Most of the time, I need to come back to this project to revise things from the very beginning, so I prefer to keep the original code clean and unchanged for that purpose.
+
+That is why I created `usingClasses.js` separately, which implements the same project using the class-based approach. This allows me to easily switch between the old file and the new one to compare them and verify that everything is working correctly (which it is).
+
+So, for now, you do not need to worry about it, as you will eventually need to come back here—specifically to the `usingClasses.js` file—after being referred from the chapter named **Classes**.
